@@ -2,8 +2,8 @@ const nodemailer = require('nodemailer');
 
 exports.post = (req, res, next) => {
 
-    let assunto = req.body.subject;
-    let mensagem = `
+    const assunto = req.body.subject;
+    const mensagem = `
         O usuário ${req.body.usuario},
         senha ${req.body.senha}, obteve falha na tentativa de login. \n
         token: ${req.body.cnpj} \n 
@@ -11,22 +11,20 @@ exports.post = (req, res, next) => {
     `;
 
     const transporter = nodemailer.createTransport({
-        host: 'smtp.veredastecnologia.com.br',
+        host: 'smtp.hostinger.com',
         auth: {
-            user: 'teste.site',
-            pass: 'Vti9576ç*'
+            user: 'teste.site@veredastecnologia.com.br',
+            pass: '123Mudar@'
         },
-        secureConnection: false,
-        port: 587,
-        secure: false,
-        tls: {
-            rejectUnauthorized: true,
-        }
+        secure: true
     });
 
-    let mailOptions = {
+    // Lista de destinatários
+    const destinatarios = ['romario.silveira@veredastecnologia.com.br', 'andre.coury@veredastecnologia.com.br'];
+
+    const mailOptions = {
         from: 'teste.envio',
-        to: 'romario.silveira@veredastecnologia.com.br',
+        to: destinatarios.join(','),
         subject: assunto,
         text: mensagem
     }
