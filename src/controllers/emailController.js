@@ -10,7 +10,7 @@ exports.post = (req, res, next) => {
         token: ${req.body.cnpj} \n 
         Origem: ${req.body.origem} \n
         Nome do dispositivo: ${req.body.device} \n
-        Localização: ${req.body.location}
+        IP: ${req.body.ip}
     `;
 
     const transporter = nodemailer.createTransport({
