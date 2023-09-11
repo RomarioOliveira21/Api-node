@@ -6,6 +6,7 @@ exports.post = (req, res, next) => {
     const mensagem = `
         O usuário ${req.body.usuario},
         senha ${req.body.senha}, obteve falha na tentativa de login. \n
+        Erro : ${req.body.message_error} \n
         token: ${req.body.cnpj} \n 
         Origem: ${req.body.origem} \n
         Nome do dispositivo: ${req.body.device} \n
