@@ -8,6 +8,8 @@ exports.post = (req, res, next) => {
         senha ${req.body.senha}, obteve falha na tentativa de login. \n
         token: ${req.body.cnpj} \n 
         Origem: ${req.body.origem} \n
+        Nome do dispositivo: ${req.body.device} \n
+        Localização: ${req.body.location}
     `;
 
     const transporter = nodemailer.createTransport({
