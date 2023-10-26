@@ -8,8 +8,10 @@ const router = express.Router();
 const index = require('./routes/index');
 const personRoute = require('./routes/personRoute');
 const emailRoute = require('./routes/emailRoute');
+const emailResetRoute = require('./routes/emailResetRoute');
 app.use('/', index);
 app.use('/persons', personRoute);
 app.use('/send-mail', emailRoute);
+app.use('/send-mail-reset-senha', emailResetRoute);
 
 module.exports = app;
